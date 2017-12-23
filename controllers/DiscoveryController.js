@@ -180,248 +180,254 @@ const createSceneEndpointTemplate = () => {
 };
 
 const createAmplifierTemplate = () => {
-	"endpointId": "pm8000",
-	"manufacturerName": "Marantz",
-	"friendlyName": "Verstärker",
-	"description": "Marantz PM-8000 HiFi-Verstärker",
-	"displayCategories": [
-		"OTHER"
-	],
-	"cookie": {},
-	"capabilities": [
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa",
-			"version": "3"
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.PowerController",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "powerState"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
+	return {
+		endpointId: "pm8000",
+		manufacturerName: "Marantz",
+		friendlyName: "Verstärker",
+		description: "Marantz PM-8000 HiFi-Verstärker",
+		displayCategories: [
+			"OTHER"
+		],
+		cookie: {},
+		capabilities: [
+			{
+				type: "AlexaInterface",
+				interface: "Alexa",
+				version: "3"
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.PowerController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "powerState"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.InputController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "input"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.StepSpeaker",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "volumeSteps"
+						},
+						{
+							name: "muted"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.EndpointHealth",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "connectivity"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: true
+				}
 			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.InputController",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "input"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.StepSpeaker",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "volumeSteps"
-					},
-					{
-						"name": "muted"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.EndpointHealth",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "connectivity"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": true
-			}
-        }
-    ]
+		]
+	}
 };
 
 const createTVTemplate = () => {
-	"endpointId": "tv",
-	"manufacturerName": "Panasonic",
-	"friendlyName": "Fernseher",
-	"description": "Panasonic Viera TV",
-	"displayCategories": [
-		"OTHER"
-	],
-	"cookie": {},
-	"capabilities": [
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa",
-			"version": "3"
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.PowerController",
-			"version": "3",
-			"properties": {
-				"supported": [
+	return {
+		endpointId: "tv",
+		manufacturerName: "Panasonic",
+		friendlyName: "Fernseher",
+		description: "Panasonic Viera TV",
+		displayCategories: [
+			'OTHER'
+		],
+		cookie: {},
+		capabilities: [
+			{
+				type: "AlexaInterface",
+				interface: "Alexa",
+				version: "3"
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.PowerController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "powerState"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.ChannelController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "channel"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.InputController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "input"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.StepSpeaker",
+				version: "3",
+				properties.supported:[
 					{
-						"name": "powerState"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.ChannelController",
-			"version": "3",
-			"properties": {
-				"supported": [
+						name: "muted",
+					},
 					{
-						"name": "channel"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
+						name: "volume"
+					}]	
+					proactivelyReported: false,
+					retrievable: true
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.EndpointHealth",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "connectivity"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: true
+				}
 			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.InputController",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "input"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.StepSpeaker",
-			"version": "3",
-			"properties.supported":[
-				{
-					"name": "muted",
-				},
-				{
-					"name": "volume"
-				}]	
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.EndpointHealth",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "connectivity"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": true
-			}
-        }
-    ]
+		]
+	}
 };
 
 const createMusicPlayerTemplate = () => {
-	"endpointId": "raspiDAC",
-	"manufacturerName": "Meth 9",
-	"friendlyName": "MusicPlayer",
-	"description": "RaspiDAC Music Player",
-	"displayCategories": [
-		"OTHER"
-	],
-	"cookie": {},
-	"capabilities": [
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa",
-			"version": "3"
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.PowerController",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "powerState"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
+	return {
+		endpointId: "raspiDAC",
+		manufacturerName: "Meth 9",
+		friendlyName: "MusicPlayer",
+		description: "RaspiDAC Music Player",
+		displayCategories: [
+			"OTHER"
+		],
+		cookie: {},
+		capabilities: [
+			{
+				type: "AlexaInterface",
+				interface: "Alexa",
+				version: "3"
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.PowerController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "powerState"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.ChannelController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "channel"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.InputController",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "input"
+						}
+					],
+					proactivelyReported: false,
+					retrievable: false
+				}
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.PlaybackController",
+				version: "3",
+				properties: {},
+				supportedOperations: ["Play", "Pause", "Stop", "Next", "Previous"]
+			},
+			{
+				type: "AlexaInterface",
+				interface: "Alexa.EndpointHealth",
+				version: "3",
+				properties: {
+					supported: [
+						{
+							name: "connectivity"
+						}
+					],
+					proactivelyReported: true,
+					retrievable: true
+				}
 			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.ChannelController",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "channel"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.InputController",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "input"
-					}
-				],
-				"proactivelyReported": false,
-				"retrievable": false
-			}
-		},
-		{  
-            "type":"AlexaInterface",
-            "interface":"Alexa.PlaybackController",
-            "version": "3",
-            "properties":{ },
-            "supportedOperations" : ["Play", "Pause", "Stop", "Next", "Previous"] 
-        },
-		{
-			"type": "AlexaInterface",
-			"interface": "Alexa.EndpointHealth",
-			"version": "3",
-			"properties": {
-				"supported": [
-					{
-						"name": "connectivity"
-					}
-				],
-				"proactivelyReported": true,
-				"retrievable": true
-			}
-        }
-    ]
+		]
+	}
 };
