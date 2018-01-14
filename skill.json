@@ -1,0 +1,42 @@
+{
+  "skillManifest": {
+    "publishingInformation": {
+      "locales": {
+        "de-DE": {
+          "summary": "Haussteuerung",
+          "examplePhrases": [
+            "Alexa, schalte Licht aus",
+            "Alexa, schalte Licht an",
+            "Alexa, setze Szene Romantik"
+          ],
+          "name": "HaussteuerungSmartHomeSkill",
+          "description": "Haussteuerung"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Keine",
+      "category": "SMART_HOME",
+      "distributionCountries": []
+    },
+    "apis": {
+      "smartHome": {
+        "endpoint": {
+          "sourceDir": "lambda/smartHome"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "de-DE": {
+          "privacyPolicyUrl": "https://www.amazon.com/gp/help/customer/display.html?nodeId=468496"
+        }
+      },
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

@@ -4,6 +4,7 @@ const handleBrightness = require('./controllers/BrightnessController').brightnes
 const handleScene = require('./controllers/SceneController').sceneHandler;
 const handleStateReport = require('./controllers/StateReportController').stateReportHandler;
 const handleStepSpeaker = require('./controllers/StepSpeakerController').stepSpeakerHandler;
+const handleSpeaker = require('./controllers/SpeakerController').speakerHandler;
 const handleChannel = require('./controllers/ChannelController').channelHandler;
 const handleInput = require('./controllers/InputController').inputHandler;
 const handlePlayback = require('./controllers/PlaybackController').playbackHandler;
@@ -53,6 +54,9 @@ exports.handler = (request, context, cb) => {
 		
 	} else if (namespace === 'Alexa.StepSpeakerController' && ['AdjustVolume', 'SetMute'].indexOf(directive) !== -1) {
 		handler = handleStepSpeaker(request, callback);
+
+	} else if (namespace === 'Alexa.SpeakerController' && ['AdjustVolume', 'SetVolume', 'SetMute'].indexOf(directive) !== -1) {
+		handler = handleSpeaker(request, callback);
 
 	} else {
 		handler = Promise.reject(
