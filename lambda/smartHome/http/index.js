@@ -17,7 +17,8 @@ const requestType = {
 	GET_SCENES: 'getscenes',
 	SET_LIGHT: 'setlight',
 	SET_SCENE: 'setscene',
-	SET_ENTERTAIN: 'setentertain'
+	SET_ENTERTAIN: 'setentertain', //PM8000 und RaspiDAC
+	SET_TV: 'settv' //für TV
 };
 
 const lightCommand = {
@@ -95,7 +96,7 @@ const send = (request, endpointID, value, repeat) => {
 		} else {
 			option.form = {endpoint: endpointID, cmd: value, repeat: repeat};
 		}
-	}
+	} 
 	
 	return httpRequest(option);
 };
