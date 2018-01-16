@@ -11,6 +11,16 @@ function log(title, msg) {
 }
 
 /**
+ * Standard error format
+ */
+function error(type, message, validRange) {
+  const err = new Error(message);
+  err.type = type;
+  err.validRange = validRange;
+  return err;
+}
+
+/**
  * Generate a UUID
  * https://gist.github.com/jed/982883 DWTFYW public license
  */
@@ -48,5 +58,6 @@ module.exports = {
   log,
   uuid,
   clamp,
-  closestNumber
+  closestNumber,
+  error
 };

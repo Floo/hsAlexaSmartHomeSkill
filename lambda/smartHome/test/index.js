@@ -10,10 +10,18 @@ const {
 	dimmerSwitchBrighten,
 	dimmerSwitchDim,
 	activateScene,
+	speakerAdjust,
+	speakerSetVolume,
+	speakerMute,
+	channelControllerChange,
+	channelControllerSkip,
+	stepSpeakerMute,
+	stepSpeakerVolume,
+	playbackController,
 	discovery
 } = require('./templates');
 
-handler(dimmerSwitchDim, 'undefined', (error, result) => {
+handler(stepSpeakerVolume, 'undefined', (error, result) => {
 	if (error) console.log('ERROR: ', error);
 	else console.log('result', JSON.stringify(result, null, 4));
 });

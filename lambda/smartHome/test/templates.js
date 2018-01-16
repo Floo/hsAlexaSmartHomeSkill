@@ -193,7 +193,7 @@ exports.activateScene = {
         },
         "payload": {}
     }
-}
+};
 
 exports.discovery = {
     "directive": {
@@ -211,4 +211,190 @@ exports.discovery = {
         }
     }
 };
+
+exports.channelControllerSkip = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.ChannelController",
+            "name": "SkipChannels",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "tv",
+            "cookie": {}
+        },
+        "payload": {
+            "channelCount": -2
+        }
+    }
+};
+
+exports.channelControllerChange = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.ChannelController",
+            "name": "ChangeChannel",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+			"endpointId": "tv",
+            "cookie": {}
+        },
+        "payload": {
+            "channel": {
+                "number": "12",
+            },
+        }
+    }
+};
+
+exports.speakerAdjust = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.Speaker",
+            "name": "AdjustVolume",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "tv",
+            "cookie": {}
+        },
+        "payload": {
+            "volume": -20,
+            "volumeDefault": false
+        }
+    }
+};
+
+exports.speakerSetVolume = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.Speaker",
+            "name": "SetVolume",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "tv",
+            "cookie": {}
+        },
+        "payload": {
+            "volume": 26
+        }
+    }
+};
+
+exports.speakerMute = 
+{
+    "directive": {
+        "header": {
+            "namespace": "Alexa.Speaker",
+            "name": "SetMute",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "tv",
+            "cookie": {}
+        },
+        "payload": {
+            "mute": true
+        }
+    }
+};
+
+exports.stepSpeakerMute = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.StepSpeaker",
+            "name": "SetMute",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "pm8000",
+            "cookie": {}
+        },
+        "payload": {
+            "mute": true
+        }
+    }
+};
+
+exports.playbackController = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.PlaybackController",
+            "name": "Play",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "raspiDAC",
+            "cookie": {}
+        },
+        "payload": {}
+    }
+};
+
+exports.stepSpeakerVolume = {
+    "directive": {
+        "header": {
+            "namespace": "Alexa.StepSpeaker",
+            "name": "AdjustVolume",
+            "payloadVersion": "3",
+            "messageId": "1bd5d003-31b9-476f-ad03-71d471922820",
+            "correlationToken": "dFMb0z+PgpgdDmluhJ1LddFvSqZ/jCc8ptlAKulUj90jSqg=="
+        },
+        "endpoint": {
+            "scope": {
+                "type": "BearerToken",
+                "token": "access-token-from-skill"
+            },
+            "endpointId": "pm8000",
+            "cookie": {}
+        },
+        "payload": {
+            "volumeSteps": -1
+        }
+    }
+}
 

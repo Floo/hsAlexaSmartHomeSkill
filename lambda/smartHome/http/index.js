@@ -91,11 +91,7 @@ const send = (request, endpointID, value, repeat) => {
 		
 		option.url += '/music.php';
 		option.method = 'POST';
-		if (!repeat) {
-			option.form = {endpoint: endpointID, cmd: value};
-		} else {
-			option.form = {endpoint: endpointID, cmd: value, repeat: repeat};
-		}
+		!repeat ? option.form = {endpoint: endpointID, cmd: value} : option.form = {endpoint: endpointID, cmd: value, repeat: repeat};
 	} 
 	
 	return httpRequest(option);

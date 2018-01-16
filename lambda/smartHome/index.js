@@ -46,18 +46,18 @@ exports.handler = (request, context, cb) => {
 	} else if (namespace === 'Alexa.PlaybackController' && ['Play', 'Pause', 'Stop', 'Next', 'Previous'].indexOf(directive) !== -1) {
 		handler = handlePlayback(request, callback);
 		
-	} else if (namespace === 'Alexa.ChannelController' && ['ChangeChannels', 'SkipChannels'].indexOf(directive) !== -1) {
+	} else if (namespace === 'Alexa.ChannelController' && ['ChangeChannel', 'SkipChannels'].indexOf(directive) !== -1) {
 		handler = handleChannel(request, callback);
 		
 	} else if (namespace === 'Alexa.InputController' && ['SelectInput'].indexOf(directive) !== -1) {
 		handler = handleInput(request, callback);
 		
-	} else if (namespace === 'Alexa.StepSpeakerController' && ['AdjustVolume', 'SetMute'].indexOf(directive) !== -1) {
+	} else if (namespace === 'Alexa.StepSpeaker' && ['AdjustVolume', 'SetMute'].indexOf(directive) !== -1) {
 		handler = handleStepSpeaker(request, callback);
 
-	} else if (namespace === 'Alexa.SpeakerController' && ['AdjustVolume', 'SetVolume', 'SetMute'].indexOf(directive) !== -1) {
+	} else if (namespace === 'Alexa.Speaker' && ['AdjustVolume', 'SetVolume', 'SetMute'].indexOf(directive) !== -1) {
 		handler = handleSpeaker(request, callback);
-
+// TODO Errorhandler testen, schein nicht zu funktionieren!
 	} else {
 		handler = Promise.reject(
 			utils.error('INVALID_DIRECTIVE', `Unsupported namespace/directive: ${namespace}/${directive}`)

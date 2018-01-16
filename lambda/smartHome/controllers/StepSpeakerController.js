@@ -10,22 +10,22 @@ exports.stepSpeakerHandler = (request, callback) => {
 	const endpointId = request.directive.endpoint.endpointId;
 	var cmd = '';
 	var device = '';
+	var volumeDelta = 1;
 	
 	if (request.directive.header.name === "AdjustVolume") {
-		let volumeDelta = request.directive.payload.volumeSteps;
-	};
-	
-	if (!volumeDelta) {
-		cmd = 'set ${endpointId} mute';
-	} else {
-		if (volumeDelta > 0) {
-			cmd = 'set ${endpointId} vol+';
-		} else {
-			cmd = 'set ${endpointId} vol-';
-		}
-	};
+		volumeDelta = request.directive.payload.volumeSteps;
 
-	return send(requestType.SET_ENTERTAIN, endpointId, cmd, (!volumeDelta ? null : volumeDelta)).then((result) => { 
+        if (volumeDelta < 0) {
+            cmd = `set ${endpointId} vol-`;     
+        } else {
+            cmd = `set ${endpointId} vol+`;
+        }
+	} else if (request.directive.header.name === "SetMute") {
+		cmd = `set ${endpointId} mute`;
+	};
+	volumeDelta = Math.abs(volumeDelta);	
+
+	return send(requestType.SET_ENTERTAIN, endpointId, cmd, (volumeDelta < 2 ? null : volumeDelta)).then((result) => { 
 		return createResponse(request, result); 
 	});
 };

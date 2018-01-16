@@ -318,15 +318,17 @@ const createTVTemplate = () => {
 			},
 			{
 				type: "AlexaInterface",
-				interface: "Alexa.StepSpeaker",
+				interface: "Alexa.Speaker",
 				version: "3",
-				properties.supported:[
-					{
-						name: "muted",
-					},
-					{
-						name: "volume"
-					}]	
+				properties: {
+					supported: [
+						{
+							name: "muted",
+						},
+						{
+							name: "volume"
+						}
+					],
 					proactivelyReported: false,
 					retrievable: true
 				}

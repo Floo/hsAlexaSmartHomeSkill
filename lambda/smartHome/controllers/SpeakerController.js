@@ -17,19 +17,15 @@ exports.speakerHandler = (request, callback) => {
             let volumeDelta = Math.sign(volumeDelta) * 2; //Defaultwert für Lautstäreänderung für "lauter" oder "leiser" ohne Zahlenwert
         } 
         if (volumeDelta < 0) {
-            cmd = 'set ${endpointId} vol${volumeDelta}';     
+            cmd = `set ${endpointId} vol${volumeDelta}`;     
         } else {
-            cmd = 'set ${endpointId} vol+${volumeDelta}';
+            cmd = `set ${endpointId} vol+${volumeDelta}`;
         }
-    };
-    
-    if (request.directive.header.name === "SetVolume") {
+    } else if (request.directive.header.name === "SetVolume") {
         let volume = request.directive.payload.volume;
-        cmd = 'set ${endpointId} vol${volume}';
-    };
-
-    if (request.directive.header.name == "SetMute") {
-        request.directive.payload.mute ? cmd = 'set ${endpointID} mute' : cmd = 'set ${endpointID} unmute';
+        cmd = `set ${endpointId} vol${volume}`;
+    } else if (request.directive.header.name == "SetMute") {
+        request.directive.payload.mute ? cmd = `set ${endpointId} mute` : cmd = `set ${endpointId} unmute`;
     };
 	
 	return send(requestType.SET_ENTERTAIN, endpointId, cmd).then((result) => { 
