@@ -11,28 +11,15 @@ exports.createResponse = (request, status) => {
 	const endpoint = request.directive.endpoint.endpointId;
 	const response = createResponseTemplate();
 
-	/* 	const endpoint = Array.from(endpoints).find(ep =>
-			ep.endpointId === request.directive.endpoint.endpointId
-		); */
-
-	/* 	const properties = response.context.properties;
-		Array.from(endpoint['capabilities']).forEach(capability => {
-			switch (capability['interface']) {
-				case 'Alexa.EndpointHealth':
-					properties.push(getHealthProperty(device));
-					break;
-				case 'Alexa.PowerController':
-					properties.push(getPowerProperty(device, control));
-					break;
-				case 'Alexa.BrightnessController':
-					properties.push(getBrightnessProperty(device, control));
-					break;
-				case 'Alexa.LockController':
-					properties.push(getLockProperty(device, control));
-					break;
-			}
-		}); */
 	const properties = response.context.properties;
+
+	properties.push(getHealthProperty(status));
+
+	const { header } = response.event;
+	header.name = 'Response';
+	header.messageId = `${messageId}-R`;
+	header.correlationToken = correlationToken;
+	response.event.endpoint.endpointId = endpoint;
 
 	switch (request.directive.header.namespace) {
 		case 'Alexa.PowerController':
@@ -53,15 +40,13 @@ exports.createResponse = (request, status) => {
 		case 'Alexa.PlaybackController':
 			
 			break;
+		case 'Alexa':
+			header.name = 'StateReport';
+			
+			break;
 	}
 
-	properties.push(getHealthProperty(status));
 
-	const { header } = response.event;
-	header.name = 'Response';
-	header.messageId = `${messageId}-R`;
-	header.correlationToken = correlationToken;
-	response.event.endpoint.endpointId = endpoint;
 
 	return response;
 };

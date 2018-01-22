@@ -18,10 +18,12 @@ const {
 	stepSpeakerMute,
 	stepSpeakerVolume,
 	playbackController,
+	pm8000TurnOff,
+	stateReport,
 	discovery
 } = require('./templates');
 
-handler(stepSpeakerVolume, 'undefined', (error, result) => {
+handler(pm8000TurnOff, 'undefined', (error, result) => {
 	if (error) console.log('ERROR: ', error);
 	else console.log('result', JSON.stringify(result, null, 4));
 });

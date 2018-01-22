@@ -14,7 +14,7 @@ exports.speakerHandler = (request, callback) => {
 	if (request.directive.header.name === "AdjustVolume") {
         let volumeDelta = request.directive.payload.volume;
         if (request.directive.payload.volumeDefault) {
-            let volumeDelta = Math.sign(volumeDelta) * 2; //Defaultwert für Lautstäreänderung für "lauter" oder "leiser" ohne Zahlenwert
+            volumeDelta = Math.sign(volumeDelta) * 2; //Defaultwert für Lautstäreänderung für "lauter" oder "leiser" ohne Zahlenwert
         } 
         if (volumeDelta < 0) {
             cmd = `set ${endpointId} vol${volumeDelta}`;     

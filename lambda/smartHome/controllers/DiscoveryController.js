@@ -209,7 +209,7 @@ const createAmplifierTemplate = () => {
 					retrievable: false
 				}
 			},
-			{
+/* 			{
 				type: "AlexaInterface",
 				interface: "Alexa.InputController",
 				version: "3",
@@ -222,23 +222,18 @@ const createAmplifierTemplate = () => {
 					proactivelyReported: false,
 					retrievable: false
 				}
-			},
+			}, */
 			{
 				type: "AlexaInterface",
 				interface: "Alexa.StepSpeaker",
 				version: "3",
-				properties: {
-					supported: [
-						{
-							name: "volumeSteps"
-						},
-						{
-							name: "muted"
-						}
-					],
-					proactivelyReported: false,
-					retrievable: false
-				}
+				'properties.supported': [
+					// {
+					// 	name: "muted",
+					// },
+					{
+						name: "volumeSteps",
+					}],
 			},
 			{
 				type: "AlexaInterface",
@@ -288,7 +283,7 @@ const createTVTemplate = () => {
 					retrievable: false
 				}
 			},
-			{
+/* 			{
 				type: "AlexaInterface",
 				interface: "Alexa.ChannelController",
 				version: "3",
@@ -301,8 +296,8 @@ const createTVTemplate = () => {
 					proactivelyReported: false,
 					retrievable: false
 				}
-			},
-			{
+			}, */
+/* 			{
 				type: "AlexaInterface",
 				interface: "Alexa.InputController",
 				version: "3",
@@ -315,23 +310,18 @@ const createTVTemplate = () => {
 					proactivelyReported: false,
 					retrievable: false
 				}
-			},
+			}, */
 			{
 				type: "AlexaInterface",
 				interface: "Alexa.Speaker",
-				version: "3",
-				properties: {
-					supported: [
-						{
-							name: "muted",
-						},
-						{
-							name: "volume"
-						}
-					],
-					proactivelyReported: false,
-					retrievable: true
-				}
+				version: "1.0",
+				'properties.supported': [
+					// {
+					// 	name: "muted",
+					// },
+					{
+						name: "volume"
+					}],
 			},
 			{
 				type: "AlexaInterface",
@@ -355,7 +345,7 @@ const createMusicPlayerTemplate = () => {
 	return {
 		endpointId: "raspiDAC",
 		manufacturerName: "Meth 9",
-		friendlyName: "MusicPlayer",
+		friendlyName: "raspi d.a.c.",
 		description: "RaspiDAC Music Player",
 		displayCategories: [
 			"OTHER"
@@ -381,7 +371,7 @@ const createMusicPlayerTemplate = () => {
 					retrievable: false
 				}
 			},
-			{
+/* 			{
 				type: "AlexaInterface",
 				interface: "Alexa.ChannelController",
 				version: "3",
@@ -394,8 +384,8 @@ const createMusicPlayerTemplate = () => {
 					proactivelyReported: false,
 					retrievable: false
 				}
-			},
-			{
+			}, */
+/* 			{
 				type: "AlexaInterface",
 				interface: "Alexa.InputController",
 				version: "3",
@@ -408,14 +398,14 @@ const createMusicPlayerTemplate = () => {
 					proactivelyReported: false,
 					retrievable: false
 				}
-			},
-			{
+			}, */
+/* 			{
 				type: "AlexaInterface",
 				interface: "Alexa.PlaybackController",
 				version: "3",
 				properties: {},
 				supportedOperations: ["Play", "Pause", "Stop", "Next", "Previous"]
-			},
+			}, */
 			{
 				type: "AlexaInterface",
 				interface: "Alexa.EndpointHealth",

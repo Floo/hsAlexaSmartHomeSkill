@@ -110,7 +110,8 @@ const httpRequest = (option) => {
 				if ((response && response.statusCode) === 200) {
 					option.method === 'GET' ? resolve(body) : resolve('OK');
 				} else {
-					throw new Error(`Server responded: ${response && response.statusCode}`);
+					//throw new Error(`Server responded: ${response && response.statusCode}`);
+					reject(`Server responded: ${response && response.statusCode}`);
 				}
 			}
 		});

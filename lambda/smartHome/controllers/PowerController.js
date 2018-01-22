@@ -8,13 +8,16 @@ const createResponse = require('./ResponseController').createResponse;
  */
 exports.powerHandler = (request, callback) => {
 	const endpointId = request.directive.endpoint.endpointId;
+	var value = '';
 
-	if (endpointId === "tv" || endpointId === "raspiDAC" ) {
+	if (endpointId === "tv" || endpointId === "raspiDAC") {
 		if (request.directive.header.name === 'TurnOff') {
-			const value = 'set standby';
+			value = 'set standby';
 		}
+	} else if (endpointId === "pm8000") {
+		value = 'set pm8000 standby';
 	} else {
-		const value = request.directive.header.name === 'TurnOn' ? lightCommand.FS20_AN : lightCommand.FS20_AUS;
+		value = request.directive.header.name === 'TurnOn' ? lightCommand.FS20_AN : lightCommand.FS20_AUS;
 	}
 
 	return send(requestType.SET_LIGHT, endpointId, value).then((result) => { 

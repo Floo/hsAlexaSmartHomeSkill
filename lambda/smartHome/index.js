@@ -2,7 +2,7 @@ const handleDiscovery = require('./controllers/DiscoveryController').discoveryHa
 const handlePower = require('./controllers/PowerController').powerHandler;
 const handleBrightness = require('./controllers/BrightnessController').brightnessHandler;
 const handleScene = require('./controllers/SceneController').sceneHandler;
-const handleStateReport = require('./controllers/StateReportController').stateReportHandler;
+const handleReportState = require('./controllers/StateReportController').stateReportHandler;
 const handleStepSpeaker = require('./controllers/StepSpeakerController').stepSpeakerHandler;
 const handleSpeaker = require('./controllers/SpeakerController').speakerHandler;
 const handleChannel = require('./controllers/ChannelController').channelHandler;
@@ -57,6 +57,9 @@ exports.handler = (request, context, cb) => {
 
 	} else if (namespace === 'Alexa.Speaker' && ['AdjustVolume', 'SetVolume', 'SetMute'].indexOf(directive) !== -1) {
 		handler = handleSpeaker(request, callback);
+
+	} else if (namespace === 'Alexa' && ['ReportState'].indexOf(directive) !== -1) {
+		handler = handleReportState(request, callback);
 // TODO Errorhandler testen, schein nicht zu funktionieren!
 	} else {
 		handler = Promise.reject(
