@@ -401,7 +401,7 @@ exports.pm8000TurnOff = {
     "directive": {
         "header": {
             "namespace": "Alexa.PowerController",
-            "name": "TurnOff",
+            "name": "TurnOn",
             "payloadVersion": "3",
             "messageId": "7245fe8e-0899-4b5b-85e2-1d1cae538131",
             "correlationToken": "AAAAAAAAAQC7cztrpexRtp++PAAfFlSKpAEAAAAAAABArro2nC5/Zj8wfiDjvc9dXWy2QhArd9rtAWQg1lW7g4XsHBLydXgq5H68/cfxOIdLWGMfZwLZh9GPn9XNP5sMgCBfayxRYDZJUjZqg6AvxKrBnJzcj3ltoEfwCnjIa6+uJFpHaUofSJcz5XwTWS0U9PPU7kMoD4HaTsv6uxRVevArA10WCzZI3Q3xGaFtbCh4R8jIeX3s/RjQPIt42nfFhS09Of5ssIwledrpFaE1YORiy26MQ95HucQqG98hqsEwlvBUzq28r+MWbjSIBqJgkrIOM/5Q3ilkq/354AcYV1Di170P0caAR8+jQzMSmRrSIRH012vfb9hN7OXhuW089iCOtBpOCHhI181lLSC6kYzEdLx6JGht4nfunFRvMT8FJj7odl/i/JxApWFDApDCHMdDdUUKVqaCP51Bsg3kjpA9nI5WC3oO6EYbN83az7rIo2XXrudaApiMAlRRuYZy7FIxxH8F60nypRxP8jEIwG1tScd7MLikHAqbsc8HPUUn1GlvKVCaDy0dcYvZ7vIDFXFerf9gQNYmlaO9FKSs2n4WUbo="
